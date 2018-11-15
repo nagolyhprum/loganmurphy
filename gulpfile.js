@@ -30,6 +30,7 @@ const s3 = () => program('aws', 's3', 'sync', 'dist', 's3://loganmurphy.us')
 
 const verify = gulp.series(audit(), standard(), test())
 const deploy = gulp.series(verify, s3)
+gulp.task('verify', verify)
 gulp.task('deploy', deploy)
 
 const fix = gulp.series(audit('--fix'), standard('--fix'))

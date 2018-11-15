@@ -1,6 +1,14 @@
-Welcome
+Logan Murphy's Website
 =======
 
-* TODO 1
-* TODO 2
-* TODO 3
+In order to get start please run the following commands:
+
+```bash
+npm i
+npm i -g gulp
+```
+
+Gulp tasks
+* `fix` : fixes any vulnerabilities or styling errors
+* `verify` : audit, lints, and tests the code
+* `deploy` : verifies and deploy code to s3
