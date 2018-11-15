@@ -18,9 +18,9 @@ const program = (...args) => new Promise((resolve, reject) => {
 
 const npm = (script, ...args) => program('npm', 'run', script, '--', ...args)
 
-gulp.task('default', () => {
-  return npm('parcel', 'serve', '-p', '8080', '--hmr-port', '4321', '--open', '--no-cache', '--no-source-maps', 'src/index.html')
-})
+const dev = () => npm('parcel', 'serve', '-p', '8080', '--hmr-port', '4321', '--open', '--no-cache', '--no-source-maps', 'src/index.html')
+gulp.task('default', dev)
+gulp.task('dev', dev)
 
 const test = (...args) => () => npm('jest', ...args)
 const standard = (...args) => () => npm('standard', ...args)

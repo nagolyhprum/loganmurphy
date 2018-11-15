@@ -8,7 +8,8 @@ npm i
 npm i -g gulp
 ```
 
-Gulp tasks
+Gulp tasks:
+* `default`, `dev` : fixes any vulnerabilities or styling errors
 * `fix` : fixes any vulnerabilities or styling errors
 * `verify` : audit, lints, and tests the code
 * `deploy` : verifies and deploy code to s3
