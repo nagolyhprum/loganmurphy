@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Site from './components/site.jsx'
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <Site />,
   document.getElementById('root')
 )
