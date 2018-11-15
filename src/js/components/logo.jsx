@@ -7,7 +7,7 @@ const LMLogo = (canvas, scale) => {
   const OFFSET = 4 * Math.max(1, scale / 2)
   canvas.height = canvas.width = 24 * scale
   // L
-  context.strokeStyle = '#F57C00'
+  context.strokeStyle = '#FF9800'
   context.beginPath()
   context.moveTo(PADDING, PADDING)
   context.lineTo(PADDING, canvas.height - PADDING)
@@ -63,7 +63,7 @@ class Logo extends Component {
     LMLogo(this.refs.canvas, this.props.scale || 1)
   }
 
-  componentWillUpdate () {
+  componentDidUpdate () {
     LMLogo(this.refs.canvas, this.props.scale || 1)
   }
 

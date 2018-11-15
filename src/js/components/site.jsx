@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Logo from './logo'
+import Projects from './projects'
 
 class Site extends Component {
   constructor (props) {
@@ -20,6 +21,7 @@ class Site extends Component {
     return (
       <div>
         <Logo scale={this.state.scale} />
+        <Projects />
       </div>
     )
   }
