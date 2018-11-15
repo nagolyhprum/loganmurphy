@@ -17,6 +17,7 @@ const program = (...args) => new Promise((resolve, reject) => {
 })
 
 const npm = (script, ...args) => program('npm', 'run', script, '--', ...args)
+const clear = () => program('rm', '-rf', 'dist')
 
 const dev = () => npm('parcel', 'serve', '-p', '8080', '--hmr-port', '4321', '--open', '--no-cache', '--no-source-maps', 'src/index.html')
 gulp.task('default', dev)
@@ -26,10 +27,11 @@ const test = (...args) => () => npm('jest', ...args)
 const standard = (...args) => () => npm('standard', ...args)
 const audit = (...args) => () => program('npm', 'audit', ...args)
 
-const s3 = () => program('aws', 's3', 'sync', 'dist', 's3://loganmurphy.us')
+const s3 = () => program('aws', 's3', 'sync', 'dist', 's3://loganmurphy.us', '--delete')
 
 const verify = gulp.series(audit(), standard(), test())
-const deploy = gulp.series(verify, s3)
+const build = () => npm('parcel', 'build', '--no-cache', '--no-source-maps', 'src/index.html')
+const deploy = gulp.series(verify, clear, build, s3)
 gulp.task('verify', verify)
 gulp.task('deploy', deploy)
 
