@@ -26,8 +26,11 @@ const test = (...args) => () => npm('jest', ...args)
 const standard = (...args) => () => npm('standard', ...args)
 const audit = (...args) => () => program('npm', 'audit', ...args)
 
+const s3 = () => program('aws', 's3', 'sync', 'dist', 's3://loganmurphy.us')
+
 const verify = gulp.series(audit(), standard(), test())
-gulp.task('verify', verify)
+const deploy = gulp.series(verify, s3)
+gulp.task('deploy', deploy)
 
 const fix = gulp.series(audit('--fix'), standard('--fix'))
 gulp.task('fix', fix)
