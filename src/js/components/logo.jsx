@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 const LMLogo = (canvas, scale) => {
+  const alpha = Math.min(1 - (1.5 - scale) * 2, 1)
   const context = canvas.getContext('2d')
   const PADDING = 1
   const OFFSET = 4 * Math.max(1, scale / 2)
@@ -17,13 +18,13 @@ const LMLogo = (canvas, scale) => {
   context.closePath()
   context.stroke()
 
-  if (scale >= 1.5) {
-    context.beginPath()
-    context.moveTo(canvas.width / 2 - OFFSET, PADDING + OFFSET * 3)
-    context.lineTo(PADDING + OFFSET * 2, canvas.height / 2)
-    context.lineTo(canvas.width / 2 - OFFSET, canvas.height - PADDING - OFFSET * 3)
-    context.stroke()
-  }
+  context.globalAlpha = alpha
+  context.beginPath()
+  context.moveTo(canvas.width / 2 - OFFSET, PADDING + OFFSET * 3)
+  context.lineTo(PADDING + OFFSET * 2, canvas.height / 2)
+  context.lineTo(canvas.width / 2 - OFFSET, canvas.height - PADDING - OFFSET * 3)
+  context.stroke()
+  context.globalAlpha = 1
 
   // M
   context.strokeStyle = '#E040FB'
@@ -43,22 +44,26 @@ const LMLogo = (canvas, scale) => {
   context.closePath()
   context.stroke()
 
-  if (scale >= 1.5) {
-    context.beginPath()
-    context.moveTo(canvas.width / 2 + OFFSET, PADDING + OFFSET * 3)
-    context.lineTo(canvas.width - (PADDING + OFFSET * 2), canvas.height / 2)
-    context.lineTo(canvas.width / 2 + OFFSET, canvas.height - PADDING - OFFSET * 3)
-    context.stroke()
+  context.globalAlpha = alpha
+  context.beginPath()
+  context.moveTo(canvas.width / 2 + OFFSET, PADDING + OFFSET * 3)
+  context.lineTo(canvas.width - (PADDING + OFFSET * 2), canvas.height / 2)
+  context.lineTo(canvas.width / 2 + OFFSET, canvas.height - PADDING - OFFSET * 3)
+  context.stroke()
 
-    context.beginPath()
-    context.moveTo(canvas.width / 2 - OFFSET / 2, canvas.height - (PADDING + OFFSET * 3))
-    context.lineTo(canvas.width / 2 + OFFSET / 2, (PADDING + OFFSET * 3))
-    context.stroke()
-  }
+  context.beginPath()
+  context.moveTo(canvas.width / 2 - OFFSET / 2, canvas.height - (PADDING + OFFSET * 3))
+  context.lineTo(canvas.width / 2 + OFFSET / 2, (PADDING + OFFSET * 3))
+  context.stroke()
+  context.globalAlpha = 1
 }
 
 class Logo extends Component {
   componentDidMount () {
+    LMLogo(this.refs.canvas, this.props.scale || 1)
+  }
+
+  componentWillUpdate () {
     LMLogo(this.refs.canvas, this.props.scale || 1)
   }
 
