@@ -4,7 +4,24 @@
   "description": "A website all about me",
   "main": "index.js",
   "scripts": {
+    "parcel": "parcel",
+    "jest": "jest",
+    "standard": "standard",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "plugins": [
+      "react"
+    ],
+    "globals": [
+      "describe",
+      "it",
+      "expect"
+    ],
+    "ignore": [
+      "dist/*"
+    ]
   },
   "repository": {
     "type": "git",
@@ -15,5 +32,23 @@
   "bugs": {
     "url": "https://github.com/nagolyhprum/loganmurphy/issues"
   },
-  "homepage": "https://github.com/nagolyhprum/loganmurphy#readme"
+  "homepage": "https://github.com/nagolyhprum/loganmurphy#readme",
+  "dependencies": {
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.9.0",
+    "eslint-plugin-react": "^7.11.1",
+    "gulp": "^4.0.0",
+    "jest": "^23.6.0",
+    "parcel-bundler": "^1.10.3",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "standard": "^12.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  }
 }
