@@ -17,21 +17,21 @@ const program = (...args) => new Promise((resolve, reject) => {
 })
 
 const npm = (script, ...args) => program('npm', 'run', script, '--', ...args)
-const clear = () => program('rm', '-rf', 'dist')
-
-const dev = () => npm('parcel', 'serve', '-p', '8080', '--hmr-port', '4321', '--open', '--no-cache', '--no-source-maps', 'src/index.html')
+const clean = () => program('rm', '-rf', 'dist')
+const serve = () => npm('parcel', 'serve', '-p', '8080', '--hmr-port', '4321', '--open', '--no-cache', '--no-source-maps', 'src/index.html')
+const dev = gulp.series(clean, serve)
 gulp.task('default', dev)
 gulp.task('dev', dev)
 
 const test = (...args) => () => npm('jest', ...args)
 const standard = (...args) => () => npm('standard', ...args)
 const audit = (...args) => () => program('npm', 'audit', ...args)
+const verify = gulp.series(audit(), standard(), test())
 
+const build = () => npm('parcel', 'build', '--no-cache', '--no-source-maps', 'src/index.html')
 const s3 = () => program('aws', 's3', 'sync', 'dist', 's3://loganmurphy.us', '--delete')
 
-const verify = gulp.series(audit(), standard(), test())
-const build = () => npm('parcel', 'build', '--no-cache', '--no-source-maps', 'src/index.html')
-const deploy = gulp.series(verify, clear, build, s3)
+const deploy = gulp.series(verify, clean, build, s3)
 gulp.task('verify', verify)
 gulp.task('deploy', deploy)
 

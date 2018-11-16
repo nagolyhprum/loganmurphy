@@ -1,27 +1,27 @@
 import React, { Component } from 'react'
-import Logo from './logo'
-import Projects from './projects'
+import Header from './header'
+import List from './list'
+import Divider from './divider'
+
+import Projects from '../data/projects'
+import WorkExperience from '../data/workexperience'
+import Contacts from '../data/contact'
+import Accomplishments from '../data/accomplishments'
 
 class Site extends Component {
-  constructor (props) {
-    super(props)
-    this.state = { scale: 2 }
-  }
-  componentDidMount () {
-    this.interval = setInterval(() => {
-      this.setState({
-        scale: Math.sin(Date.now() * Math.PI / 1440) * 0.5 + 1.5
-      })
-    }, 1000 / 60)
-  }
-  componentWillUnmount () {
-    clearInterval(this.interval)
-  }
   render () {
     return (
       <div>
-        <Logo scale={this.state.scale} />
-        <Projects />
+        <Header />
+        <div className='site-body'>
+          <List name='Work Experience' list={WorkExperience} />
+          <Divider />
+          <List name='Projects' list={Projects} />
+          <Divider />
+          <List name='Accomplishments' list={Accomplishments} />
+          <Divider />
+          <List name='Contact' list={Contacts} />
+        </div>
       </div>
     )
   }

@@ -1,13 +1,22 @@
 @import 'reset';
 @import 'colors';
 
+em {
+  font-style: italic;
+}
+
 body {
-  color : $primary-text-color;
   background : $light-primary-color;
+  color : $default-primary-color;
   font-family: 'Roboto', sans-serif;
 }
 
-p {
+li {
+  list-style: disc outside none;
+  margin-left: 20px;
+}
+
+p, li {
   color : $secondary-text-color;
 }
 
@@ -20,13 +29,17 @@ p {
   flex-wrap: wrap;
 }
 
+.text-primary {
+  color : $text-primary-color;
+}
+
 .columns > div {
-  width: 30%;
+  width: 25%;
   flex-grow: 1;
 }
 
 .card {
-  background : $text-primary-color;
+  background : white;
   border-radius : 4px;
   box-shadow: 1px 1px 4px transparentize(black, .7)
 }
@@ -47,4 +60,42 @@ p {
 
 .space-children > * {
   margin : 4px;
+}
+
+.header {
+  background : $dark-primary-color;
+  position : fixed;
+  left : 0;
+  right : 0;
+  display : flex;
+  align-items: center;
+  box-shadow: 0 4px 4px transparentize(black, .7)
+}
+
+.site-body {
+  padding-top : 67px;
+}
+
+.button {
+  color : $text-primary-color;
+  background: $accent-color;
+  padding : 16px;
+  text-decoration : none;
+  border-radius : 24px;
+  width : 50%;
+  text-align : center;
+
+  transition : background 300ms;
+
+  &:hover {
+    background : lighten($accent-color, 10%)
+  }
+}
+
+.title {
+  font-size : 24px;
+}
+
+.grow {
+  flex-grow : 1;
 }

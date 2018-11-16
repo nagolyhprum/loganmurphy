@@ -27,7 +27,7 @@ const LMLogo = (canvas, scale) => {
   context.globalAlpha = 1
 
   // M
-  context.strokeStyle = '#E040FB'
+  context.strokeStyle = '#CFD8DC'
   context.beginPath()
   context.moveTo(PADDING, PADDING)
   context.lineTo(canvas.width / 2 - OFFSET, PADDING)
