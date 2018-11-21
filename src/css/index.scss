@@ -5,7 +5,13 @@ em {
   font-style: italic;
 }
 
+strong {
+  font-weight : bold;
+  color : black;
+}
+
 body {
+  line-height : 1.25;
   background : $light-primary-color;
   color : $default-primary-color;
   font-family: 'Roboto', sans-serif;
@@ -24,18 +30,17 @@ p, li {
   border-top : 1px solid $divider-color;
 }
 
-.columns {
+.row {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .text-primary {
   color : $text-primary-color;
 }
 
-.columns > div {
-  width: 25%;
+.row > .column {
   flex-grow: 1;
+  width : 0;
 }
 
 .card {
@@ -62,7 +67,12 @@ p, li {
   margin : 4px;
 }
 
+.remove-top-padding {
+  padding-top : 0;
+}
+
 .header {
+  font-size : 12px;
   background : $dark-primary-color;
   position : fixed;
   left : 0;
@@ -73,7 +83,7 @@ p, li {
 }
 
 .site-body {
-  padding-top : 67px;
+  padding-top : 87px;
 }
 
 .button {
@@ -92,10 +102,7 @@ p, li {
   }
 }
 
-.title {
-  font-size : 24px;
-}
-
 .grow {
   flex-grow : 1;
+  width : 0;
 }

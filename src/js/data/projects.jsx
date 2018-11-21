@@ -5,7 +5,12 @@ import Lexicon from '../../images/lexicon.svg'
 export default [{
   'name': 'Lexicon',
   logo: <img src={Lexicon} height='48' />,
-  description: 'description',
+  from: new Date('Dec 3, 2015'),
+  description: `An application for teaching spoken languages
+
+**Languages:** Java, Kotlin, Javascript, C++
+
+**Technologies:** AWS, Mongo, Docker`,
   links: [{
     text: 'Website',
     url: 'https://speaknatively.com/'
@@ -16,7 +21,9 @@ export default [{
 }, {
   'name': 'Polly UI',
   logo: <Logo scale='2' />,
-  description: 'description',
+  description: `Cross platform canvas renderer, currently only supports html5 canvas
+
+**Languages:** Javascript`,
   links: [{
     text: 'Github',
     url: 'https://github.com/nagolyhprum/polly-ui'
@@ -27,17 +34,23 @@ export default [{
 }, {
   'name': 'Decipher',
   logo: <Logo scale='2' />,
-  description: 'description',
+  description: `An application for teaching programming languages, currenly teaches a lot of syntax from Javascript and Python
+
+**Languages:** Javascript`,
   links: [{
-    text: 'Learn More',
-    url: '#'
+    text: 'Website',
+    url: 'http://decipher.io.s3-website-us-east-1.amazonaws.com/master/'
   }]
 }, {
   'name': 'LoganMurphy.us',
   logo: <Logo scale='2' />,
-  description: 'description',
+  description: `A complete AWS serverless website to promote myself
+
+**Languages:** Javascript,SCSS,HTML
+
+**Technologies:** React, AWS`,
   links: [{
-    text: 'Learn More',
-    url: '#'
+    text: 'Github',
+    url: 'https://github.com/nagolyhprum/loganmurphy'
   }]
 }]

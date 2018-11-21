@@ -1,6 +1,8 @@
 // https://www.iconfinder.com/search/?q=github
 
 import React from 'react'
+import Phone from '../../images/phone.svg'
+import Email from '../../images/email.svg'
 import StackOverflow from '../../images/stackoverflow.svg'
 import Facebook from '../../images/facebook.svg'
 import LinkedIn from '../../images/linkedin.svg'
@@ -41,6 +43,20 @@ export default [{
   links: [{
     text: 'Connect',
     url: 'https://www.linkedin.com/in/logan-murphy-2aa93348/'
+  }]
+}, {
+  'name': 'Email',
+  logo: <img src={Email} height='48' />,
+  links: [{
+    text: 'Connect',
+    url: 'mailto:nagolyhprum@hotmail.com'
+  }]
+}, {
+  'name': 'Phone',
+  logo: <img src={Phone} height='48' />,
+  links: [{
+    text: 'Connect',
+    url: 'tel:2154322921'
   }]
 }, {
   'name': 'Resume',
