@@ -40,7 +40,7 @@ const getDisplay = (project, index) => {
         {getMarkdown(project)}
         {
           project.links.map(link => (
-            <a className='button' target='_blank' key={link.url} href={link.url}>{link.text}</a>
+            <a rel='noreferrer' className='button' target='_blank' key={link.url} href={link.url}>{link.text}</a>
           ))
         }
       </div>

@@ -5,7 +5,7 @@ import Exigis from '../../images/exigis.png'
 
 export default [{
   'name': 'LearnVest',
-  logo: <img height='48' src={LearnVest} />,
+  logo: <img alt='LearnVest' height='48' src={LearnVest} />,
   from: new Date('2017/03/15'),
   description: `Help users with their financial questions
 
@@ -19,7 +19,7 @@ Responsibilities:
   }]
 }, {
   'name': 'YouVisit',
-  logo: <img style={{ borderRadius: '50%' }} src={YouVisit} height='48' />,
+  logo: <img alt='YouVisit' style={{ borderRadius: '50%' }} src={YouVisit} height='48' />,
   from: new Date('2015/01/01'),
   to: new Date('2017/03/01'),
   description: `Bring experiences to users through the power of VR
@@ -34,7 +34,7 @@ Responsibilities:
   }]
 }, {
   'name': 'Exigis',
-  logo: <img style={{ borderRadius: '50%' }} src={Exigis} height='48' />,
+  logo: <img alt='Exigis' style={{ borderRadius: '50%' }} src={Exigis} height='48' />,
   from: new Date('2014/06/01'),
   to: new Date('2014/12/01'),
   description: `Business process automation software and services for risk management, insurance, and trade finance

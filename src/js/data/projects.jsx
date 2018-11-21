@@ -4,7 +4,7 @@ import Lexicon from '../../images/lexicon.svg'
 
 export default [{
   'name': 'Lexicon',
-  logo: <img src={Lexicon} height='48' />,
+  logo: <img alt='Lexicon' src={Lexicon} height='48' />,
   from: new Date('Dec 3, 2015'),
   description: `An application for teaching spoken languages
 

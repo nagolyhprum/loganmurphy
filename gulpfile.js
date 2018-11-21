@@ -29,7 +29,10 @@ const audit = (...args) => () => program('npm', 'audit', ...args)
 const verify = gulp.series(audit(), standard(), test())
 
 const build = () => npm('parcel', 'build', '--no-cache', '--no-source-maps', 'src/index.html')
-const s3 = () => program('aws', 's3', 'sync', 'dist', 's3://loganmurphy.us', '--delete')
+const s3 = () =>
+  program('aws', 's3', 'sync', 'dist', 's3://loganmurphy.us', '--delete').then(
+    () => program('aws', 's3', 'sync', 'seo', 's3://loganmurphy.us')
+  )
 
 const deploy = gulp.series(verify, clean, build, s3)
 gulp.task('verify', verify)
