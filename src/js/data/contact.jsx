@@ -9,6 +9,7 @@ import LinkedIn from '../../images/linkedin.svg'
 import GitHub from '../../images/github.svg'
 import YouTube from '../../images/youtube.svg'
 import Resume from '../../images/resume.svg'
+import Codepen from '../../images/codepen.png'
 export default [{
   'name': 'Facebook',
   logo: <img alt='Facebook' src={Facebook} height='48' />,
@@ -22,6 +23,13 @@ export default [{
   links: [{
     text: 'Connect',
     url: 'https://github.com/nagolyhprum'
+  }]
+}, {
+  'name': 'Codepen',
+  logo: <img alt='Codepen' src={Codepen} height='48' />,
+  links: [{
+    text: 'Connect',
+    url: 'https://codepen.io/logan-murphy/'
   }]
 }, {
   'name': 'StackOverflow',

@@ -1,6 +1,9 @@
 import React from 'react'
 import Temple from '../../images/temple.svg'
 import Logo from '../components/logo'
+import AWSCertifiedLogo from '../../images/AWSCertifiedLogo.png'
+import AWSCertifiedTag from '../../images/AWSCertifiedTag.png'
+import AWSCertifiedPDF from '../../documents/AWSCertifiedDeveloperAssociateCertificate.pdf'
 
 export default [{
   'name': 'Bachelor of Science (B.S.)',
@@ -19,5 +22,12 @@ export default [{
   links: [{
     url: 'https://bitbucket.org/nagolyhprum/hole-in-the-wall/src/master/',
     text: 'Bitbucket'
+  }]
+}, {
+  name: 'Amazon Web Services',
+  logo: <img src={AWSCertifiedLogo} height='48' />,
+  links: [{
+    url: AWSCertifiedPDF,
+    text: <img src={AWSCertifiedTag} />
   }]
 }]
