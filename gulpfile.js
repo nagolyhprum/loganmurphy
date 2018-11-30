@@ -1,5 +1,6 @@
 const gulp = require('gulp')
 const { spawn } = require('child_process')
+const fs = require('fs')
 
 const log = _ => {
   process.stdout.write(_)
@@ -28,10 +29,20 @@ const standard = (...args) => () => npm('standard', ...args)
 const audit = (...args) => () => program('npm', 'audit', ...args)
 const verify = gulp.series(audit(), standard(), test())
 
-const build = () => npm('parcel', 'build', '--no-cache', '--no-source-maps', 'src/index.html')
+const generateServiceWorker = () => {
+  fs.writeFileSync(
+    "./dist/service-worker.js", 
+    fs.readFileSync(
+      "./templates/service-worker.js",
+      "utf-8"
+    ).replace("${FILES}", JSON.stringify(["/"].concat(fs.readdirSync("./dist").map(it => `/${it}`))))
+  )    
+}
+
+const build = () => npm('parcel', 'build', '--no-cache', '--no-source-maps', 'src/index.html').then(generateServiceWorker)
 const s3 = () =>
   program('aws', 's3', 'sync', 'dist', 's3://loganmurphy.us', '--delete').then(
-    () => program('aws', 's3', 'sync', 'seo', 's3://loganmurphy.us')
+    () => program('aws', 's3', 'sync', 'public', 's3://loganmurphy.us')
   )
 
 const deploy = gulp.series(verify, clean, build, s3)
