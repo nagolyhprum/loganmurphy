@@ -1,0 +1,21 @@
+{
+  "short_name": "Logan Murphy",
+  "name": "Logan Murphy - Senior Fullstack Engineer",
+  "icons": [
+    {
+      "src": "./images/lm_logo_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./images/lm_logo_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#607D8B",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#FF9800"
+}
