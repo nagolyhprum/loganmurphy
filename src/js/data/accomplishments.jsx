@@ -25,9 +25,9 @@ export default [{
   }]
 }, {
   name: 'Amazon Web Services',
-  logo: <img alt="AWS" src={AWSCertifiedLogo} height='48' />,
+  logo: <img alt='AWS' src={AWSCertifiedLogo} height='48' />,
   links: [{
     url: AWSCertifiedPDF,
-    text: <img src={AWSCertifiedTag} alt="AWS Certified Developer Associate" />
+    text: <img src={AWSCertifiedTag} alt='AWS Certified Developer Associate' />
   }]
 }]

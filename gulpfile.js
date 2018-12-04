@@ -31,12 +31,12 @@ const verify = gulp.series(audit(), standard(), test())
 
 const generateServiceWorker = () => {
   fs.writeFileSync(
-    "./dist/service-worker.js", 
+    './dist/service-worker.js',
     fs.readFileSync(
-      "./templates/service-worker.js",
-      "utf-8"
-    ).replace("${FILES}", JSON.stringify(["/"].concat(fs.readdirSync("./dist").map(it => `/${it}`))))
-  )    
+      './templates/service-worker.tmp',
+      'utf-8'
+    ).replace('$FILES', JSON.stringify(['/'].concat(fs.readdirSync('./dist').map(it => `/${it}`))))
+  )
 }
 
 const build = () => npm('parcel', 'build', '--no-cache', '--no-source-maps', 'src/index.html').then(generateServiceWorker)

@@ -1,7 +1,7 @@
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('loganmurphy').then(function(cache) {
-      return cache.addAll(${FILES});
+      return cache.addAll($FILES);
     })
   );
 });

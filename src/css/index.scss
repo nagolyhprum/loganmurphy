@@ -6,8 +6,8 @@ em {
 }
 
 strong {
+  color : darken($secondary-text-color, 30%);
   font-weight : bold;
-  color : black;
 }
 
 body {
@@ -87,9 +87,13 @@ p, li {
 }
 
 .button {
+  justify-content: center;
+  align-items: center;
+  display: flex;
   color : $text-primary-color;
   background: $accent-color;
-  padding : 16px;
+  margin : 8px;
+  padding : 8px;
   text-decoration : none;
   border-radius : 24px;
   width : 50%;
