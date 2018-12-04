@@ -104,6 +104,10 @@ p, li {
   &:hover {
     background : lighten($accent-color, 10%)
   }
+
+  img {
+    max-width: 100%;
+  }
 }
 
 .grow {
