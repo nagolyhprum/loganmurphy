@@ -48,6 +48,7 @@ const s3 = () =>
 const deploy = gulp.series(verify, clean, build, s3)
 gulp.task('verify', verify)
 gulp.task('deploy', deploy)
+gulp.task("build", build)
 
 const fix = gulp.series(audit('--fix'), standard('--fix'))
 gulp.task('fix', fix)

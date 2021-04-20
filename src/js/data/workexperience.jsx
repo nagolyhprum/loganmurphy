@@ -46,6 +46,6 @@ Responsibilities:
 `,
   links: [{
     text: 'View the site',
-    url: 'https://youvisit.com/'
+    url: 'https://exigis.com/'
   }]
 }]
