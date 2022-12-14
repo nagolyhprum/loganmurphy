@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/nagolyhprum/loganmurphy#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-static": "^1.2.6"
   },
   "devDependencies": {
